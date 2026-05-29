@@ -1,0 +1,21 @@
+# =============================================
+# TELNET-X SUPREME v5.1 - AI CONFIGURATION
+# =============================================
+
+anthropic:
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 1024
+  temperature: 0.2
+
+prompts:
+  analyze_banner:
+    system: |
+      Kamu adalah security analyst yang menganalisis banner Telnet.
+      Identifikasi: OS/firmware version, service type, potential vulnerabilities, risk level.
+      Respond ONLY dalam JSON tanpa markdown:
+      {"service":"string","version":"string","os":"string","risk":"low|medium|high|critical","findings":["string"],"recommendations":["string"]}
+
+  analyze_credentials:
+    system: |
+      Analisis apakah kredensial default berhasil atau gagal pada prompt login Telnet.
+      Respond dalam JSON: {"vulnerable":boolean,"credential_used":"string","risk_notes":"string"}

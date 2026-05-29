@@ -1,0 +1,43 @@
+# =============================================
+# TELNET-X SUPREME v5.1 - SCAN PROFILES
+# Control Plane: ubah tanpa recompile
+# =============================================
+
+default:
+  timeout_ms: 5000
+  max_concurrent: 10
+  retry_attempts: 2
+  banner_max_bytes: 2048
+  port: 23
+
+profiles:
+  quick:
+    description: "Scan cepat, timeout pendek"
+    timeout_ms: 2000
+    max_concurrent: 20
+    banner_max_bytes: 512
+    ai_analysis: false
+
+  deep:
+    description: "Scan mendetail dengan AI analysis"
+    timeout_ms: 10000
+    max_concurrent: 5
+    banner_max_bytes: 4096
+    ai_analysis: true
+    capture_prompts: true
+
+  audit:
+    description: "Full security audit dengan AI"
+    timeout_ms: 15000
+    max_concurrent: 3
+    banner_max_bytes: 8192
+    ai_analysis: true
+    capture_prompts: true
+    check_weak_credentials: true
+
+output:
+  formats:
+    - json
+    - text
+  directory: "./reports"
+  timestamp_filename: true

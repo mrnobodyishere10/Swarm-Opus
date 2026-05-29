@@ -1,0 +1,27 @@
+{
+  "name": "keuanganku-bot",
+  "version": "2.0.0",
+  "description": "KeuanganKu - AI-powered personal finance Telegram bot",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "worker": "node src/queue/worker.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.15.0",
+    "bullmq": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.19.0",
+    "googleapis": "^140.0.0",
+    "js-yaml": "^4.1.0",
+    "node-telegram-bot-api": "^0.65.0",
+    "redis": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

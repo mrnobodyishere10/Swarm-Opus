@@ -1,0 +1,41 @@
+bot:
+  name: "KeuanganKu"
+  version: "2.0.0"
+  welcome_message: "Halo! Saya KeuanganKu Bot 💰 Catat pengeluaran & pemasukan kamu."
+  currency: "IDR"
+  timezone: "Asia/Jakarta"
+
+gemini:
+  model: "gemini-1.5-flash"
+  temperature: 0.3
+  max_tokens: 1024
+  parse_retries: 3
+
+queue:
+  concurrency: 3
+  retry_attempts: 5
+  retry_delay_ms: 2000
+  job_timeout_ms: 30000
+
+sheets:
+  rate_limit_per_minute: 30
+  batch_size: 10
+  retry_on_quota: true
+  exponential_backoff_max_ms: 32000
+
+sidecars:
+  auth:
+    enabled: true
+    whitelist_users: []
+  logger:
+    level: "info"
+    format: "json"
+  rate_limiter:
+    enabled: true
+    max_requests_per_user: 20
+    window_seconds: 60
+
+features:
+  ai_parse: true
+  weekly_summary: true
+  budget_alert: false
